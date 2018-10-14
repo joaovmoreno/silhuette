@@ -1,0 +1,71 @@
+<ion-header *ngIf='edit'>
+  <ion-navbar color="secondary">   
+   <ion-title style="text-align: center">
+      <strong>Editar paciente:{{paciente.nome}}</strong>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-header *ngIf='edit === false'>
+  <ion-navbar color="secondary">   
+   <ion-title style="text-align: center">
+      <strong>Cadastrar paciente</strong>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-list *ngIf='edit === false'>
+
+    <ion-item>
+      <ion-label stacked>Nome:</ion-label>
+      <ion-input type="text" name="nome" [(ngModel)]="model.nome" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Genero:</ion-label>
+        <ion-select [(ngModel)]="model.genero">
+          <ion-option value="femenino">Femenino</ion-option>
+          <ion-option value="masculino">Masculino</ion-option>
+        </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Data de nascimento:</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" name="birth" [(ngModel)]="model.dt_nascimento"></ion-datetime>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Peso:</ion-label>
+      <ion-input type='number' [(ngModel)]="model.peso"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Altura:</ion-label>
+      <ion-input type='number' [(ngModel)]="model.altura"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-list *ngIf='edit'>   
+
+    <ion-item>
+      <ion-label stacked>Peso:</ion-label>
+      <ion-input type='number' [(ngModel)]="model.peso"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Altura:</ion-label>
+      <ion-input type='number' [(ngModel)]="model.altura"></ion-input>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block (click)="save()">Salvar</button>
+
+</ion-content>

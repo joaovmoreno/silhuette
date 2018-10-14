@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-navbar color="secondary">
+    <ion-buttons end>
+      <button ion-button icon-only (click)='addItem()'><ion-icon name="md-add-circle"></ion-icon></button>
+    </ion-buttons>
+   <ion-title style="text-align: center">
+      <strong>GEPETS</strong>
+    </ion-title>
+
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <button ion-button  round color='secondary' full end (click)="pushPage()">
+    Consulta
+  </button>
+  <!--<button ion-button  round color='secondary' full end  (click)="chamadaNovaAvaliacao()">-->
+  <!--Avaliação-->
+  <!--</button>-->
+  <ion-footer>
+  <div style="text-align:center;">
+    <h5>Desenvolvido por :<br/> João Vitor Moreno e Leonardo Setubal </h5>
+    <br>Version 1.1
+  </div>
+  </ion-footer>
+</ion-content>

@@ -1,0 +1,28 @@
+
+<ion-header>
+  <ion-navbar color="secondary" style="text-align: center">
+    <ion-title>
+      {{key.nome}}
+    </ion-title>
+    <!--<ion-item end>{{avaliacao}} Avaliações</ion-item>-->
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-item >
+    Data de nascimento: {{key.dt_nascimento | date:'dd/MM/yyyy'}}
+  </ion-item>
+  <ion-item>
+    Genero: {{key.genero}}
+  </ion-item>
+  <ion-item>
+    Peso: {{key.peso}}
+  </ion-item>
+  <ion-item>
+    Altura: {{key.altura}}
+  </ion-item>
+</ion-list>
+  <button ion-button icon-only (click)="chamadaAvaliacao()" full>Iniciar Avaliação</button>
+  <!-- <button ion-button icon-only (click)="historicoAvaliacoes()" full>Historico</button> -->
+</ion-content>

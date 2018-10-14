@@ -1,14 +1,48 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
+  <ion-navbar color="secondary">   
+   <ion-title style="text-align: center">
+      <strong>Pacientes</strong>
     </ion-title>
+
   </ion-navbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-list>
+    <ion-card *ngFor="let item of pacientes"  >
+
+      <ion-card-header (click)='viewItem(item)'>
+        <h1>{{ item.paciente.nome }}</h1>
+      </ion-card-header>
+
+      <ion-card-content (click)='viewItem(item)'>
+        <p>{{ item.paciente.genero }} - {{ item.paciente.dt_nascimento | date:'dd/MM/yyyy' }} </p>
+      </ion-card-content>
+
+      <ion-row text-center>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="editPaciente(item);">
+            <ion-icon name="create"></ion-icon>
+            <div>Editar</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button icon-left clear small (click)="removePaciente(item);">
+            <ion-icon name="trash"></ion-icon>
+            <div>Excluir</div>
+          </button>
+        </ion-col>
+        <!--ion-col>
+            <a href="tel:{{ item.contact.phone }}" ion-button icon-left clear small>
+            <ion-icon name="call"></ion-icon>
+            <div>Ligar</div>
+          </a>
+        </ion-col--> 
+      </ion-row>
+
+    </ion-card>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="addPaciente()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
 </ion-content>
