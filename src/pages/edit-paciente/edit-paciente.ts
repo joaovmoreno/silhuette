@@ -23,7 +23,12 @@ export class EditPacientePage {
         this.model.nome = this.paciente.nome;
         this.model.genero = this.paciente.genero;
         this.model.dt_nascimento = this.paciente.dt_nascimento;
-        this.model.avaliacoes = this.paciente.avaliacoes;
+        this.model.avaliacoes = this.paciente.avaliacoes;     
+          if(!this.model.peso || this.model.altura){
+          this.model.altura = this.paciente.altura;
+          this.model.peso = this.paciente.peso;
+          console.log('entrou if peso e altura');
+        }
       }
       console.log(this.model);
     } else {

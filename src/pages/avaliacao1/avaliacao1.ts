@@ -7,10 +7,23 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
   templateUrl: 'avaliacao1.html',
 })
 export class Avaliacao1Page {
-  dt_nascimento = this.navParams.get('item').dt_nascimento
+ 
+  dt_nascimento = this.navParams.get('paciente').paciente.dt_nascimento;
   dataNascimento= new Date(this.dt_nascimento).getFullYear();
   dataAtual = new Date(Date.now()).getFullYear();
   idade = this.dataAtual - this.dataNascimento;
+
+  avalicao = {
+    data : this.dataAtual,
+    pergunta1: '',
+    n_imagem1:'',
+    pergunta2 : '',
+    n_imagem2:'',
+    pergunta3: '',
+    n_imagem3:'',
+    pergunta4: '',
+    n_imagem4:'',
+  }
 
   naoprimeiro:boolean;
   @ViewChild('slider') slider: any;
@@ -391,6 +404,7 @@ export class Avaliacao1Page {
   ];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private alert: AlertController) {
+   
   }
 
   ionViewDidLoad() {
