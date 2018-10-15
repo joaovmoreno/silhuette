@@ -13,6 +13,7 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { PacienteProvider } from '../providers/paciente/paciente';
 import { AnimationService, AnimatesDirective } from 'css-animator';
+import { Avaliacao2Page } from '../pages/avaliacao2/avaliacao2';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AnimationService, AnimatesDirective } from 'css-animator';
     MainPage,
     PacienteDetailPage,
     Avaliacao1Page,
-    AnimatesDirective
+    AnimatesDirective,
+    Avaliacao2Page
    
   ],
   imports: [
@@ -38,7 +40,8 @@ import { AnimationService, AnimatesDirective } from 'css-animator';
     HomePage,
     MainPage,
     PacienteDetailPage,
-    Avaliacao1Page
+    Avaliacao1Page,
+    Avaliacao2Page
     
   ],
   providers: [

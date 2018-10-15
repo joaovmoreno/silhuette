@@ -1,5 +1,6 @@
 import { Component,ViewChild} from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Avaliacao2Page } from '../avaliacao2/avaliacao2';
 
 @IonicPage()
 @Component({
@@ -14,7 +15,7 @@ export class Avaliacao1Page {
   idade = this.dataAtual - this.dataNascimento;
 
   avalicao = {
-    data : this.dataAtual,
+    data : new Date(),
     pergunta1: '',
     n_imagem1:'',
     pergunta2 : '',
@@ -410,6 +411,8 @@ export class Avaliacao1Page {
   ionViewDidLoad() {
     console.log(this.idade);
     this.instructions();
+    this.naoprimeiro;
+    this.showSlides();
   }
   instructions(){
     let instrucao = this.alert.create({
@@ -426,6 +429,51 @@ export class Avaliacao1Page {
     });
     instrucao.present();
   }
+  addSlides(slide){
+    this.avalicao.pergunta1 = slide.imc;
+    this.avalicao.n_imagem1 = slide.id;
 
+    console.log(this.avalicao);
+  }
+  callAv2(){
+    this.navCtrl.push(Avaliacao2Page,{avalicao:this.avalicao});
+  }
+  slideNext(){
+    this.slider.slideNext();
+    if(this.slider.valueOf().isEnd()) {
+      this.slidePrev();
+    }
+    this.naoprimeiro = true
+  }
+
+  slidePrev(){
+    this.slider.slidePrev();
+    if(this.slider.valueOf().isBeginning()) {
+      this.naoprimeiro = false;  
+      }
+  }
+  showSlides() {
+    if (this.navParams.get('paciente').paciente.genero == 'masculino') {
+      if (this.idade > 7) {
+        this.slides = this.kidM;
+      }
+      if (this.idade >= 13) {
+        this.slides = this.adultM;
+      }
+    }
+    else {
+      if (this.idade > 7) {
+        this.slides = this.kidF;
+
+      }
+      if (this.idade >= 13) {
+        this.slides = this.adultF;
+      }
+
+    }
+  }
+
+
+    
 
 }
