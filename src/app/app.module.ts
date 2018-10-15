@@ -14,6 +14,7 @@ import { HomePage } from '../pages/home/home';
 import { PacienteProvider } from '../providers/paciente/paciente';
 import { AnimationService, AnimatesDirective } from 'css-animator';
 import { Avaliacao2Page } from '../pages/avaliacao2/avaliacao2';
+import { Avaliacao3Page } from '../pages/avaliacao3/avaliacao3';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { Avaliacao2Page } from '../pages/avaliacao2/avaliacao2';
     PacienteDetailPage,
     Avaliacao1Page,
     AnimatesDirective,
-    Avaliacao2Page
+    Avaliacao2Page,
+    Avaliacao3Page
    
   ],
   imports: [
@@ -41,7 +43,8 @@ import { Avaliacao2Page } from '../pages/avaliacao2/avaliacao2';
     MainPage,
     PacienteDetailPage,
     Avaliacao1Page,
-    Avaliacao2Page
+    Avaliacao2Page,
+    Avaliacao3Page
     
   ],
   providers: [

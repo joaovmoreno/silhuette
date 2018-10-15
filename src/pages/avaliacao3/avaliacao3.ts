@@ -2,7 +2,7 @@ import { Component,ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the Avaliacao2Page page.
+ * Generated class for the Avaliacao3Page page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,10 +10,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-avaliacao2',
-  templateUrl: 'avaliacao2.html',
+  selector: 'page-avaliacao3',
+  templateUrl: 'avaliacao3.html',
 })
-export class Avaliacao2Page {
+export class Avaliacao3Page {
 
   idade = this.navParams.get('idade');
 
@@ -408,20 +408,16 @@ export class Avaliacao2Page {
   }
  
   addSlides(slide){
-    if (this.avalicao.pergunta2 === null) {
-      this.avalicao.pergunta2 = slide.imc;
-      this.avalicao.n_imagem2 = slide.id;
-    
-      this.callAv3();
+    if (this.avalicao.pergunta3 === null) {
+      this.avalicao.pergunta3 = slide.imc;
+      this.avalicao.n_imagem3 = slide.id;
+      this.callAv4();
     }
 
     console.log(this.avalicao);
   }
-  callAv3(){
-    this.navCtrl.push(Avaliacao2Page,{
-      avalicao:this.avalicao,
-      idade:this.idade,
-      paciente:this.navParams.get('paciente')});
+  callAv4(){
+    this.navCtrl.push(Avaliacao3Page);
   }
   slideNext(){
     this.slider.slideNext();

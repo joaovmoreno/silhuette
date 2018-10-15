@@ -439,7 +439,9 @@ export class Avaliacao1Page {
     console.log(this.avalicao);
   }
   callAv2(){
-    this.navCtrl.push(Avaliacao2Page,{avalicao:this.avalicao});
+    this.navCtrl.push(Avaliacao2Page,{avalicao:this.avalicao,
+      idade:this.idade,
+      paciente:this.navParams.get('paciente')});
   }
   slideNext(){
     this.slider.slideNext();
