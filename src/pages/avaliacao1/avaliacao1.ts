@@ -16,14 +16,14 @@ export class Avaliacao1Page {
 
   avalicao = {
     data : new Date(),
-    pergunta1: '',
-    n_imagem1:'',
-    pergunta2 : '',
-    n_imagem2:'',
-    pergunta3: '',
-    n_imagem3:'',
-    pergunta4: '',
-    n_imagem4:'',
+    pergunta1: null,
+    n_imagem1: null,
+    pergunta2 : null,
+    n_imagem2:null,
+    pergunta3: null,
+    n_imagem3:null,
+    pergunta4: null,
+    n_imagem4:null
   }
 
   naoprimeiro:boolean;
@@ -430,8 +430,11 @@ export class Avaliacao1Page {
     instrucao.present();
   }
   addSlides(slide){
-    this.avalicao.pergunta1 = slide.imc;
-    this.avalicao.n_imagem1 = slide.id;
+    if (this.avalicao.pergunta1 === null) {
+      this.avalicao.pergunta1 = slide.imc;
+      this.avalicao.n_imagem1 = slide.id;
+      this.callAv2();
+    }
 
     console.log(this.avalicao);
   }
